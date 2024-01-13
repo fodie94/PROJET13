@@ -1,4 +1,3 @@
-// PageSign.jsx
 import React from "react";
 import Header from "../../components/Header";
 import MainContentSign from "./MainContentSign";
