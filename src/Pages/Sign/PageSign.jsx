@@ -8,7 +8,6 @@ const PageSign = () => {
   return (
     <div>
       <Header />
-      {/* Passez la propriété loginData à MainContentSign */}
       <MainContentSign />
       <Footer />
     </div>
