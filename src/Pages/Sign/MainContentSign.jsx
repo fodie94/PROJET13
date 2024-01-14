@@ -8,7 +8,7 @@ import axios from "axios"; // Importer Axios
 const MainContentSign = () => {
   const dispatch = useDispatch();
   const [error, setError] = useState(false);
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState(""); // Changement ici
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -43,13 +43,14 @@ const MainContentSign = () => {
   const handleSignIn = (e) => {
     e.preventDefault();
 
-    if (username.trim() === "" || password.trim() === "") {
+    if (email.trim() === "" || password.trim() === "") {
+      // Changement ici
       alert("Veuillez remplir tous les champs de connexion.");
       return;
     }
 
     fetchData("http://localhost:3001/api/v1/user/login", {
-      username,
+      email, // Changement ici
       password,
     });
   };
@@ -65,12 +66,12 @@ const MainContentSign = () => {
         <h1>Sign In</h1>
         <form onSubmit={handleSignIn}>
           <div className="input-wrapper">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="email">Email</label> {/* Changement ici */}
             <input
               type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="input-wrapper">
