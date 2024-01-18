@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setToken } from "../redux/reduxtest";
 import argentBankLogo from "../assets/argentBankLogo.png";
-
+import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -31,16 +31,17 @@ const Header = () => {
       <div className="main-nav-droite">
         {!token ? (
           <Link className="main-nav-item" to="/PageSign">
+            <FaUserCircle className="icon" /> {/* Logout Icon */}
             Sign Up
           </Link>
         ) : (
           <>
             <Link className="main-nav-item" to="/PageUser">
-              <i className="fa fa-user-circle"></i>
+              <FaUserCircle className="icon" /> {/* User Icon */}
               {`${prenom} `}
             </Link>
             <Link className="main-nav-item" onClick={handleSignOut}>
-              <i className="fa fa-sign-out"></i>
+              <FaSignOutAlt className="icon" /> {/* Logout Icon */}
               Sign Out
             </Link>
           </>
