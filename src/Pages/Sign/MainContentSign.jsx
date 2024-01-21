@@ -37,9 +37,15 @@ const MainContentSign = () => {
       }
     } catch (error) {
       console.error("Erreur lors de la requête :", error.message);
+
+      // Afficher un message d'erreur spécifique en fonction de la raison
+      if (error.response || error.response.status === 401) {
+        // 401 Unauthorized, c'est-à-dire identifiants incorrects
+        setError(true);
+        alert("Identifiants incorrects. Veuillez réessayer.");
+      }
     }
   };
-
   const handleSignIn = (e) => {
     e.preventDefault();
 
@@ -87,7 +93,7 @@ const MainContentSign = () => {
             <input type="checkbox" id="remember-me" />
             <label htmlFor="remember-me">Remember me</label>
           </div>
-          {error && <span>les identifiants sont faux</span>}
+          {/* {error && <span>les identifiants sont faux</span>} */}
           <button type="submit" className="sign-in-button">
             Sign In
           </button>
