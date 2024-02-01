@@ -2,7 +2,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setToken } from "../redux/reduxtest";
+import { setToken } from "../redux/reduxSlice";
 import argentBankLogo from "../assets/argentBankLogo.png";
 import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
 const Header = () => {

@@ -50,13 +50,12 @@ const MainContentSign = () => {
     e.preventDefault();
 
     if (email.trim() === "" || password.trim() === "") {
-      // Changement ici
       alert("Veuillez remplir tous les champs de connexion.");
       return;
     }
 
     fetchData("http://localhost:3001/api/v1/user/login", {
-      email, // Changement ici
+      email,
       password,
     });
   };
@@ -72,7 +71,7 @@ const MainContentSign = () => {
         <h1>Sign In</h1>
         <form onSubmit={handleSignIn}>
           <div className="input-wrapper">
-            <label htmlFor="email">Email</label> {/* Changement ici */}
+            <label htmlFor="email">Email</label>
             <input
               type="text"
               id="email"
