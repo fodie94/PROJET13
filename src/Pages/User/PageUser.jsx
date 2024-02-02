@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 //import MainContentUser from "./userTest";
 const PageUser = () => {
   const { token } = useSelector((state) => state.user);
+
   if (token) {
     return (
       <div>
